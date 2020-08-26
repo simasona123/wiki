@@ -1,0 +1,24 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    New Page
+{% endblock %}
+
+{% block body %}
+    <form method="POST">
+        {% csrf_token %}
+        <div><label>{{form.title.label}}</label>{{form.title}}</div>
+        <div><label>{{form.text.label}}</label></div>
+        <div>{{form.text}}</div>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+{% endblock %}
+<style type="text/css">
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+    form > div{
+        margin: 10px;
+    }
+</style>
